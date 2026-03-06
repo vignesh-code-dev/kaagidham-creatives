@@ -19,7 +19,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <div className="relative text-white min-h-screen pt-[80px] text-lg">
+      <div className="relative text-white min-h-screen pt-[80px] text-lg overflow-x-hidden">
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
         {/* Content Wrapper */}
@@ -27,7 +27,7 @@ export default function Home() {
           {/* HERO SECTION */}
           <section
             id="home"
-            className="bg-center bg-cover"
+            className="bg-center bg-cover w-full"
             style={{ backgroundImage: `url(${about})` }}
           >
             <div className="max-w-7xl mx-auto px-6 md:px-10 min-h-[80vh] md:min-h-[90vh] flex flex-col justify-center">
@@ -41,7 +41,7 @@ export default function Home() {
                 powerful visual systems built for clarity and influence.
               </p>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <Link
                   to="contact"
                   smooth
@@ -68,7 +68,7 @@ export default function Home() {
           {/* ABOUT PREVIEW */}
           <section
             id="about"
-            className="relative bg-cover bg-center bg-no-repeat text-white py-4"
+            className="relative bg-cover bg-center bg-no-repeat text-white py-4 w-full"
             style={{ backgroundImage: `url(${service})` }}
           >
             {/* Overlay */}
@@ -120,7 +120,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="space-y-2 flex justify-around">
+                <div className="space-y-2 flex flex-wrap justify-center gap-6">
                   <p className="text-lg">
                     We{" "}
                     <span className="text-[var(--color-gold)] font-semibold">

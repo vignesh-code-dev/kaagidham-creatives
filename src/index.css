@@ -20,3 +20,7 @@
   --color-gray-light: #b3b3b3; /* Paragraph Text */
   --color-border: #1a1a1a; /* Border Color */
 }
+
+html, body {
+  overflow-x: hidden;
+}
