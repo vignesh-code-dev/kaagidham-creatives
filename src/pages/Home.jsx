@@ -109,7 +109,7 @@ export default function Home() {
               {/* Ideas Section */}
               <div className="flex flex-col gap-6 mb-20">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold bg-[var(--color-gold)] mb-6 p-4 text-center rounded-tl-full rounded-br-full">
+                  <h2 className="text-3xl font-bold bg-[var(--color-gold)] mb-6 p-4 text-center ">
                     IDEAS ON PAPER. IMPACT IN{" "}
                     <span className="text-black">REALITY.</span>
                   </h2>
