@@ -149,9 +149,9 @@ export default function Home() {
                   <p className="text-lg">
                     We{" "}
                     <span className="text-[var(--color-gold)] font-semibold">
-                      design
+                      design.
                     </span>{" "}
-                    .
+                    
                   </p>
                   <p className="text-lg">
                     We{" "}
