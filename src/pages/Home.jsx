@@ -1,20 +1,30 @@
 import Navbar from "../components/Navbar";
-import about from "../assets/about-bg.png";
-import service from "../assets/kc-bg.jpg";
-
+import about from "../assets/about-bg.webp";
+import service from "../assets/kc-bg.webp";
 import { Link } from "react-scroll";
 
 import { MdDesignServices } from "react-icons/md";
 import { FaBullhorn, FaFilm, FaBullseye } from "react-icons/fa";
 
-import conBg from "../assets/kc-bg.jpg";
+import conBg from "../assets/kc-bg.webp";
 import { IoIosMail } from "react-icons/io";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { IoLocationSharp } from "react-icons/io5";
 import "@fontsource/fira-code/400.css";
 import ContactForm from "../components/ContactForm";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      once: true,
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -30,7 +40,7 @@ export default function Home() {
             className="bg-center bg-cover w-full"
             style={{ backgroundImage: `url(${about})` }}
           >
-            <div className="max-w-7xl mx-auto px-6 md:px-10 min-h-[80vh] md:min-h-[90vh] flex flex-col justify-center">
+            <div className="max-w-7xl mx-auto px-6 md:px-10 min-h-[70vh] md:min-h-[90vh] flex flex-col justify-center">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 We Turn Ideas Into{" "}
                 <span className="text-[var(--color-gold)]">Impact.</span>
@@ -39,6 +49,9 @@ export default function Home() {
               <p className="mt-6 text-white tracking-wide max-w-xl md:max-w-2xl text-base md:text-lg leading-relaxed">
                 A strategy-led creative studio shaping ideas into structured,
                 powerful visual systems built for clarity and influence.
+              </p>
+              <p className=" mt-4 text-white">
+                Trusted by founders, brands, and institutions.
               </p>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
@@ -245,7 +258,11 @@ export default function Home() {
                 Our <span className="text-[var(--color-gold)]">Services</span>
               </h1>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-12">
-                <div className="flex items-start gap-4">
+                <div
+                  className="flex items-start gap-4 p-6 rounded-xl bg-white/5 
+border border-transparent hover:border-[var(--color-gold)] 
+transition-all duration-300 hover:-translate-y-1"
+                >
                   <MdDesignServices className="text-[var(--color-gold)] w-12 h-12 md:w-16 md:h-16" />
 
                   <div className="ml-6 flex flex-col gap-2">
@@ -261,7 +278,11 @@ export default function Home() {
                 </div>
 
                 {/* Service 2 */}
-                <div className="flex items-start gap-4 ">
+                <div
+                  className="flex items-start gap-4 p-6 rounded-xl bg-white/5 
+border border-transparent hover:border-[var(--color-gold)] 
+transition-all duration-300 hover:-translate-y-1"
+                >
                   <FaBullhorn className="text-[var(--color-gold)] w-12 h-12 md:w-16 md:h-16" />
 
                   <div className="ml-6 flex flex-col gap-2">
@@ -277,7 +298,11 @@ export default function Home() {
                 </div>
 
                 {/* Service 3 */}
-                <div className="flex items-start gap-4">
+                <div
+                  className="flex items-start gap-4 p-6 rounded-xl bg-white/5 
+border border-transparent hover:border-[var(--color-gold)] 
+transition-all duration-300 hover:-translate-y-1"
+                >
                   <FaFilm className="text-[var(--color-gold)] w-12 h-12 md:w-16 md:h-16" />
 
                   <div className="ml-6 flex flex-col gap-2">
@@ -293,7 +318,11 @@ export default function Home() {
                 </div>
 
                 {/* Service 4 */}
-                <div className="flex items-start gap-4">
+                <div
+                  className="flex items-start gap-4 p-6 rounded-xl bg-white/5 
+border border-transparent hover:border-[var(--color-gold)] 
+transition-all duration-300 hover:-translate-y-1"
+                >
                   <FaBullseye className="text-[var(--color-gold)] w-12 h-12 md:w-16 md:h-16" />
 
                   <div className="ml-6 flex flex-col gap-2">
@@ -323,7 +352,7 @@ export default function Home() {
 
           <section
             id="contact"
-            className="relative bg-cover bg-center text-white py-20"
+            className="relative bg-cover bg-center text-white py-16 md:py-20"
             style={{ backgroundImage: `url(${conBg})` }}
           >
             {/* Overlay */}
@@ -332,9 +361,9 @@ export default function Home() {
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
               {/* Title */}
               {/* Grid Layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
                 <div>
-                  <div className="mb-12">
+                  <div className="mb-12 max-w-lg">
                     <h2 className="tracking-[0.15em] text-2xl md:text-3xl font-semibold">
                       LET'S START A
                     </h2>
@@ -352,60 +381,65 @@ export default function Home() {
                   </div>
 
                   {/* LEFT SIDE CONTACT INFO */}
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     {/* Email */}
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-black/40">
-                        <IoIosMail
-                          size={28}
-                          className="md:size-20 text-[var(--color-gold)]"
-                        />
+                    <a
+                      href="mailto:contact.kaagidhamcreatives@gmail.com"
+                      className="w-full flex items-start gap-4 p-4 md:p-5 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[var(--color-gold)] transition-all duration-300 hover:-translate-y-1 "
+                    >
+                      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40">
+                        <IoIosMail className="text-[var(--color-gold)] text-xl md:text-2xl" />
                       </div>
 
                       <div>
-                        <h2 className="tracking-widest font-semibold text-[var(--color-gold)]">
+                        <h2 className="tracking-widest font-semibold text-[var(--color-gold)] text-sm md:text-base">
                           EMAIL
                         </h2>
-                        <p className="font-semibold text-lg">
+
+                        <p className="font-medium text-sm md:text-lg break-all">
                           contact.kaagidhamcreatives@gmail.com
                         </p>
                       </div>
-                    </div>
+                    </a>
 
                     {/* Phone */}
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-black/40">
-                        <FaPhoneVolume
-                          size={26}
-                          className="md:size-14 text-[var(--color-gold)]"
-                        />
+                    <a
+                      href="tel:+918939553359"
+                      className="w-full flex items-start gap-4 p-4 md:p-5 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[var(--color-gold)] transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40">
+                        <FaPhoneVolume className="text-[var(--color-gold)] text-lg md:text-xl" />
                       </div>
 
                       <div>
-                        <h2 className="tracking-widest font-semibold text-[var(--color-gold)]">
+                        <h2 className="tracking-widest font-semibold text-[var(--color-gold)] text-sm md:text-base">
                           PHONE
                         </h2>
-                        <p className="font-semibold text-lg md:text-2xl font-mono">
+
+                        <p className="font-semibold text-base md:text-xl font-mono">
                           +91 8939553359
                         </p>
                       </div>
-                    </div>
+                    </a>
 
                     {/* Address */}
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-black/40">
-                        <IoLocationSharp
-                          size={28}
-                          className="md:size-15 text-[var(--color-gold)]"
-                        />
+
+                    <a
+                      href="https://www.google.com/maps/search/172,+Main+Road,Malaiyalappatti,Arumbavur,+Veppanthattai,Perambalur,+Tamil+Nadu+%E2%80%93+621103+/@11.380049,78.7301942,1822m/data=!3m2!1e3!4b1?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-start gap-4 p-4 md:p-5 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-[var(--color-gold)] hover:-translate-y-1 transition-all duration-300"
+                    >
+                      <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-black/40">
+                        <IoLocationSharp className="text-[var(--color-gold)] text-xl md:text-2xl" />
                       </div>
 
                       <div>
-                        <h2 className="tracking-widest font-semibold text-[var(--color-gold)]">
+                        <h2 className="tracking-widest font-semibold text-[var(--color-gold)] text-sm md:text-base">
                           ADDRESS
                         </h2>
 
-                        <p className="font-semibold text-lg">
+                        <p className="font-medium text-sm md:text-lg leading-relaxed">
                           172, Main Road, Malaiyalappatti <br />
                           Arumbavur, Veppanthattai <br />
                           Perambalur,
@@ -415,7 +449,7 @@ export default function Home() {
                           </span>
                         </p>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </div>
 
@@ -426,9 +460,13 @@ export default function Home() {
           </section>
 
           {/* FOOTER */}
-          <footer className="bg-[var(--color-primary)] text-[var(--color-gray-light)] text-center py-8 border-t border-neutral-800">
-            <p>
-              © 2026 Kaagidham Creatives Private Limited. All Rights Reserved.
+          <footer className="bg-[var(--color-primary)] text-center py-10 border-t border-neutral-800">
+            <p className="text-sm text-gray-400">
+              © 2026 Kaagidham Creatives Private Limited
+            </p>
+
+            <p className="text-xs mt-2 text-gray-500">
+              Strategy • Design • Motion • Creative Direction
             </p>
           </footer>
         </div>
