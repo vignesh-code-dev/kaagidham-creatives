@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Idiqlat:wght@200;300;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.tittle {
+    font-family: "Permanent Marker", cursive;
+}
 
 .kaagitham{
     font-family: "poppins",sans-serif;
@@ -15,7 +20,7 @@
 :root {
   --color-primary: #0d0d0d; /* Dark Background */
   --color-black: #000000; /* Pure Black */
-  --color-gold: #dea107; /* Brand Gold */
+  --color-gold: #eeb118; /* Brand Gold */
   --color-gold-soft: #ffd369; /* Light Gold Accent */
   --color-gray-light: #b3b3b3; /* Paragraph Text */
   --color-border: #1a1a1a; /* Border Color */
@@ -62,4 +67,63 @@ html, body {
 /* Close button */
 .Toastify__close-button {
   color: var(--color-gold);
+}
+
+/* index.css */
+@keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* custom property animate பண்ணணும் */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.snake-border {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.snake-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 12px;
+
+  /* 🔥 conic gradient = சுற்றி movement */
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    transparent 300deg,
+    #ffd700 330deg,
+    #d4af37 350deg,
+    transparent 360deg
+  );
+
+  animation: snakeAngle 4s linear infinite;
+
+  /* border மட்டும் */
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes snakeAngle {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
 }

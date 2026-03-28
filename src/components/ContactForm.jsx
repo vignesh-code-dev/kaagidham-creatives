@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { toast} from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
@@ -33,115 +33,102 @@ export default function ContactForm() {
   };
 
   return (
-   
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="bg-black/40 backdrop-blur-md 
-      p-6 sm:p-8 md:p-10 
-      rounded-xl 
+    <form
+      ref={form}
+      onSubmit={sendEmail}
+      className="bg-transparent 
+      p-6 sm:p-8 md:p-8  
       border border-neutral-700 
       space-y-5 
-      w-full"
-      >
-        <input type="text" name="botcheck" className="hidden" />
-        {/* Name */}
-        <input
-        autoFocus
-          type="text"
-          name="user_name"
-          placeholder="Your Name"
-          required
-          className="w-full p-3 md:p-4 
-        bg-black/60 
-        border border-neutral-700 
-        rounded-md 
+      max-w-md"
+    >
+      <input type="text" name="botcheck" className="hidden" />
+      {/* Name */}
+      <input
+        type="text"
+        name="user_name"
+        placeholder="Your Name"
+        required
+        className="w-full p-3 md:p-3 
+        bg-gray-100/80
+        text-black
         outline-none 
-        text-sm md:text-base
-        focus:border-[var(--color-gold)] 
+        font-medium
+        text-sm md:text-base 
         transition
-focus:ring-1 
-focus:ring-[var(--color-gold)] 
-"
-        />
-
-        {/* Email */}
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Your Email"
-          required
-          className="w-full p-3 md:p-4 
-        bg-black/60 
-        border border-neutral-700 
-        rounded-md 
-        outline-none 
-        text-sm md:text-base
-        focus:border-[var(--color-gold)]
         focus:ring-1 
-        focus:ring-[var(--color-gold)] 
-        transition"
-        />
+        focus:ring-black"
+      />
 
-        {/* Subject */}
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          className="w-full p-3 md:p-4 
-        bg-black/60 
-        border border-neutral-700 
-        rounded-md 
+      {/* Email */}
+      <input
+        type="email"
+        name="user_email"
+        placeholder="Your Email"
+        required
+        className="w-full p-3 md:p-3 
+        bg-gray-100/80  
+        text-black
         outline-none 
+        font-medium
         text-sm md:text-base
-        focus:border-[var(--color-gold)]
         focus:ring-1 
-        focus:ring-[var(--color-gold)]
-        transition"
-        />
+        focus:ring-black"
+      />
 
-        {/* Message */}
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Tell us about your project..."
-          className="w-full p-3 md:p-4 
-        bg-black/60 
-        border border-neutral-700 
-        rounded-md 
+      {/* Subject */}
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        className="w-full p-3 md:p-3 
+        bg-gray-100/80 
+        text-black
         outline-none 
+        font-medium
+        text-sm md:text-base
+        focus:ring-1 
+        focus:ring-black"
+      />
+
+      {/* Message */}
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Tell us about your project..."
+        className="w-full p-3 md:p-4 
+        bg-gray-100/80 
+        text-black  
+        outline-none 
+        font-medium
         text-sm md:text-base
         resize-none
-        focus:border-[var(--color-gold)]
         focus:ring-1 
-focus:ring-[var(--color-gold)]
-        required
-        transition"
-        ></textarea>
+        focus:ring-[var(--color-gold)]
+        required"
+      ></textarea>
 
-        {/* Button */}
+      {/* Button */}
+      <div className="flex justify-center">
         <button
           type="submit"
           disabled={loading}
-          className="w-full 
+          className="w-fit 
   bg-[var(--color-gold)] 
   text-black 
-  py-3 md:py-4 
+  py-3 md:py-3 
+  px-2
   font-semibold 
-  text-sm md:text-base
-  rounded-md 
+  text-sm md:text-base 
   shadow-sm 
-  shadow-white
   hover:shadow-md
   hover:opacity-90 
   transition 
-  cursor-pointer
-  disabled:opacity-60"
+  cursor-pointer"
         >
           {loading ? "Sending..." : "Send Message"}
         </button>
-      </form>
-      
-   
+      </div>
+    </form>
   );
 }

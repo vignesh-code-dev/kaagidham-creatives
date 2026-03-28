@@ -6,7 +6,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black/90 backdrop-blur-md text-white fixed w-full top-0 z-50 border-b border-neutral-800">
+    <nav
+      className="fixed top-0 left-0 w-full z-50 
+backdrop-blur-md bg-black/40 text-white"
+    >
       {/* Container */}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-[80px]">
         {/* Logo */}
@@ -94,71 +97,74 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-black border-t border-neutral-800">
-          <div className="flex flex-col items-center gap-8 py-8 text-lg tracking-wide">
-            <Link
-              to="home"
-              smooth
-              duration={600}
-              offset={-80}
-              spy
-              onClick={() => setMenuOpen(false)}
-              className="cursor-pointer hover:text-[var(--color-gold)] transition"
-            >
-              Home
-            </Link>
 
-            <Link
-              to="about"
-              smooth
-              duration={600}
-              offset={-80}
-              spy
-              onClick={() => setMenuOpen(false)}
-              className="cursor-pointer hover:text-[var(--color-gold)] transition"
-            >
-              About
-            </Link>
+      <div
+        className={`md:hidden fixed top-[70px] left-0 w-full bg-black border-t border-neutral-800 
+  transform transition-all duration-700 ease-in-out z-40
+  ${menuOpen ? "translate-x-0 opacity-100" : "-translate-x-100 opacity-0 pointer-events-none"}`}
+      >
+        <div className="flex flex-col items-center gap-8 py-8 text-lg tracking-wide">
+          <Link
+            to="home"
+            smooth
+            duration={600}
+            offset={-80}
+            spy
+            onClick={() => setMenuOpen(false)}
+            className="cursor-pointer hover:text-[var(--color-gold)] transition"
+          >
+            Home
+          </Link>
 
-            <Link
-              to="services"
-              smooth
-              duration={600}
-              offset={-80}
-              spy
-              onClick={() => setMenuOpen(false)}
-              className="cursor-pointer hover:text-[var(--color-gold)] transition"
-            >
-              Services
-            </Link>
+          <Link
+            to="about"
+            smooth
+            duration={600}
+            offset={-80}
+            spy
+            onClick={() => setMenuOpen(false)}
+            className="cursor-pointer hover:text-[var(--color-gold)] transition"
+          >
+            About
+          </Link>
 
-            <Link
-              to="contact"
-              smooth
-              duration={600}
-              offset={-80}
-              spy
-              onClick={() => setMenuOpen(false)}
-              className="cursor-pointer hover:text-[var(--color-gold)] transition"
-            >
-              Contact
-            </Link>
+          <Link
+            to="services"
+            smooth
+            duration={600}
+            offset={-80}
+            spy
+            onClick={() => setMenuOpen(false)}
+            className="cursor-pointer hover:text-[var(--color-gold)] transition"
+          >
+            Services
+          </Link>
 
-            {/* Mobile CTA */}
-            <Link
-              to="contact"
-              smooth
-              duration={600}
-              offset={-80}
-              onClick={() => setMenuOpen(false)}
-              className="bg-[var(--color-gold)] text-black px-6 py-3 font-semibold rounded hover:opacity-90 transition"
-            >
-              Start a Conversation
-            </Link>
-          </div>
+          <Link
+            to="contact"
+            smooth
+            duration={600}
+            offset={-80}
+            spy
+            onClick={() => setMenuOpen(false)}
+            className="cursor-pointer hover:text-[var(--color-gold)] transition"
+          >
+            Contact
+          </Link>
+
+          {/* Mobile CTA */}
+          <Link
+            to="contact"
+            smooth
+            duration={600}
+            offset={-80}
+            onClick={() => setMenuOpen(false)}
+            className="bg-[var(--color-gold)] text-black px-6 py-3 font-semibold rounded hover:opacity-90 transition"
+          >
+            Start a Conversation
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
