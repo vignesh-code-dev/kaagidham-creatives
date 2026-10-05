@@ -1,170 +1,147 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import logo from "../assets/kc-logo.png";
-
+const navItems = [
+  { name: "Home", to: "home" },
+  { name: "About", to: "about" },
+  { name: "Services", to: "services" },
+  { name: "Contact", to: "contact" },
+];
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const closeMenu = () => setMenuOpen(false);
   return (
-    <nav
-      className="fixed top-0 left-0 w-full z-50 
-backdrop-blur-md bg-black/40 text-white"
-    >
-      {/* Container */}
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-[80px]">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img
-            src={logo}
-            alt="logo"
-            className="w-[60px] md:w-[80px] h-[60px] md:h-[80px] object-contain"
-          />
-          <h1 className="text-sm md:text-xl font-bold tracking-wide whitespace-nowrap">
-            KAAGIDHAM{" "}
-            <span className="text-[var(--color-gold)]">CREATIVES</span>
-          </h1>
-        </div>
-
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-md tracking-wide">
-          <Link
-            to="home"
-            smooth
-            duration={600}
-            offset={-80}
-            spy
-            activeClass="text-[var(--color-gold)] font-bold"
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            Home
-          </Link>
-
-          <Link
-            to="about"
-            smooth
-            duration={600}
-            offset={-75}
-            spy
-            activeClass="text-[var(--color-gold)] font-bold"
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            About
-          </Link>
-
-          <Link
-            to="services"
-            smooth
-            duration={600}
-            offset={-75}
-            spy
-            activeClass="text-[var(--color-gold)] font-bold"
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            Services
-          </Link>
-
-          <Link
-            to="contact"
-            smooth
-            duration={600}
-            offset={-75}
-            spy
-            activeClass="text-[var(--color-gold)] font-bold"
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            Contact
-          </Link>
-        </ul>
-
-        {/* Desktop CTA */}
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-neutral-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.04)]">
+      {" "}
+      {/* ================= NAVBAR ================= */}{" "}
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 h-[72px] flex items-center justify-between">
+        {" "}
+        {/* ================= LOGO ================= */}{" "}
         <Link
-          to="contact"
+          to="home"
           smooth
           duration={600}
           offset={-80}
-          className="hidden md:block bg-[var(--color-gold)] text-black px-5 py-2 text-sm font-semibold rounded hover:opacity-90 transition cursor-pointer"
+          onClick={closeMenu}
+          className="flex items-center gap-2.5 cursor-pointer group"
         >
-          Start a Conversation
-        </Link>
-
-        {/* Mobile Menu Button */}
+          {" "}
+          <img
+            src={logo}
+            alt="Kaagidham Creatives"
+            className=" w-[48px] h-[48px] sm:w-[54px] sm:h-[54px] object-contain transition-transform duration-300 group-hover:scale-105 "
+          />{" "}
+          <div className="leading-none">
+            {" "}
+            <h1 className="text-sm sm:text-base md:text-lg font-bold tracking-[0.08em] text-[#111111] whitespace-nowrap">
+              {" "}
+              KAAGIDHAM{" "}
+            </h1>{" "}
+            <p className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold tracking-[0.2em] text-[#F7C214] mt-1">
+              {" "}
+              CREATIVES{" "}
+            </p>{" "}
+          </div>{" "}
+        </Link>{" "}
+        {/* ================= DESKTOP MENU ================= */}{" "}
+        <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          {" "}
+          <ul className="flex items-center gap-7 lg:gap-9">
+            {" "}
+            {navItems.map((item) => (
+              <li key={item.to}>
+                {" "}
+                <Link
+                  to={item.to}
+                  smooth
+                  duration={600}
+                  offset={-80}
+                  spy
+                  activeClass="!text-[#F7C214]"
+                  className=" relative cursor-pointer text-sm font-medium text-neutral-700 hover:text-[#F7C214] transition-colors duration-300 py-2 group "
+                >
+                  {" "}
+                  {item.name} {/* Hover Line */}{" "}
+                  <span className=" absolute left-1/2 -bottom-0.5 w-0 h-[2px] bg-[#F7C214] -translate-x-1/2 group-hover:w-full transition-all duration-300 " />{" "}
+                </Link>{" "}
+              </li>
+            ))}{" "}
+          </ul>{" "}
+          {/* Desktop CTA */}{" "}
+          <Link
+            to="contact"
+            smooth
+            duration={600}
+            offset={-80}
+            className=" cursor-pointer inline-flex items-center gap-2 bg-[#111111] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#F7C214] hover:text-black transition-all duration-300 shadow-sm "
+          >
+            {" "}
+            Start a Conversation <span className="text-base">→</span>{" "}
+          </Link>{" "}
+        </div>{" "}
+        {/* ================= MOBILE BUTTON ================= */}{" "}
         <button
-          className="md:hidden text-3xl"
+          type="button"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
           onClick={() => setMenuOpen(!menuOpen)}
+          className=" md:hidden w-10 h-10 rounded-full border border-neutral-200 bg-white text-[#111111] flex items-center justify-center text-xl hover:border-[#C9A227] hover:text-[#C9A227] transition-all duration-300 "
         >
-          {menuOpen ? "✕" : "☰"}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-
+          {" "}
+          {menuOpen ? "×" : "☰"}{" "}
+        </button>{" "}
+      </div>{" "}
+      {/* ================= MOBILE MENU ================= */}{" "}
       <div
-        className={`md:hidden fixed top-[70px] left-0 w-full bg-black border-t border-neutral-800 
-  transform transition-all duration-700 ease-in-out z-40
-  ${menuOpen ? "translate-x-0 opacity-100" : "-translate-x-100 opacity-0 pointer-events-none"}`}
+        className={` md:hidden overflow-hidden transition-all duration-300 ease-out ${menuOpen ? "max-h-[500px] opacity-100 border-t border-neutral-200" : "max-h-0 opacity-0"} `}
       >
-        <div className="flex flex-col items-center gap-8 py-8 text-lg tracking-wide">
-          <Link
-            to="home"
-            smooth
-            duration={600}
-            offset={-80}
-            spy
-            onClick={() => setMenuOpen(false)}
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            Home
-          </Link>
-
-          <Link
-            to="about"
-            smooth
-            duration={600}
-            offset={-80}
-            spy
-            onClick={() => setMenuOpen(false)}
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            About
-          </Link>
-
-          <Link
-            to="services"
-            smooth
-            duration={600}
-            offset={-80}
-            spy
-            onClick={() => setMenuOpen(false)}
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
-          >
-            Services
-          </Link>
-
+        {" "}
+        <div className="bg-white px-5 sm:px-8 py-6">
+          {" "}
+          {/* Mobile Links */}{" "}
+          <div className="space-y-1">
+            {" "}
+            {navItems.map((item, index) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                smooth
+                duration={600}
+                offset={-75}
+                spy
+                onClick={closeMenu}
+                activeClass="!text-[#C9A227] !bg-[#C9A227]/5"
+                className=" flex items-center justify-between w-full px-4 py-3.5 rounded-xl text-base font-medium text-neutral-700 cursor-pointer hover:text-[#C9A227] hover:bg-[#C9A227]/5 transition-all duration-300 "
+              >
+                {" "}
+                <span>{item.name}</span>{" "}
+                <span className="text-neutral-300 text-sm">
+                  {" "}
+                  0{index + 1}{" "}
+                </span>{" "}
+              </Link>
+            ))}{" "}
+          </div>{" "}
+          {/* Mobile Divider */} <div className="my-5 h-px bg-neutral-200" />{" "}
+          {/* Mobile CTA */}{" "}
           <Link
             to="contact"
             smooth
             duration={600}
-            offset={-80}
-            spy
-            onClick={() => setMenuOpen(false)}
-            className="cursor-pointer hover:text-[var(--color-gold)] transition"
+            offset={-75}
+            onClick={closeMenu}
+            className=" flex items-center justify-center gap-2 w-full bg-[#111111] text-white px-6 py-3.5 rounded-xl font-semibold text-sm cursor-pointer hover:bg-[#C9A227] hover:text-black transition-all duration-300 "
           >
-            Contact
-          </Link>
-
-          {/* Mobile CTA */}
-          <Link
-            to="contact"
-            smooth
-            duration={600}
-            offset={-80}
-            onClick={() => setMenuOpen(false)}
-            className="bg-[var(--color-gold)] text-black px-6 py-3 font-semibold rounded hover:opacity-90 transition"
-          >
-            Start a Conversation
-          </Link>
-        </div>
-      </div>
+            {" "}
+            Start a Conversation <span>→</span>{" "}
+          </Link>{" "}
+          {/* Small Brand Text */}{" "}
+          <p className="text-center text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-5">
+            {" "}
+            Strategy • Design • Motion{" "}
+          </p>{" "}
+        </div>{" "}
+      </div>{" "}
     </nav>
   );
 }
