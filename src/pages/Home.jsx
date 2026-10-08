@@ -797,9 +797,9 @@ export default function Home() {
         ===================================================== */}
         <footer className="bg-[#111111] text-white py-10">
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="grid md:grid-cols-3 gap-8 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 items-center">
               {/* Brand */}
-              <div>
+              <div className="text-center md:text-left">
                 <p className="font-bold text-xl">
                   Kaagidham <span className="text-[#D4AF37]">Creatives</span>
                 </p>
@@ -811,7 +811,7 @@ export default function Home() {
 
               {/* Tagline + Social Media */}
               <div className="text-center">
-                <p className="text-sm text-neutral-500 mb-4">
+                <p className="text-sm text-neutral-500 mb-4 max-w-xs mx-auto leading-relaxed">
                   Creative thinking with purpose, clarity, and intention.
                 </p>
 
@@ -841,7 +841,7 @@ export default function Home() {
               </div>
 
               {/* Copyright */}
-              <div className="md:text-right">
+              <div className="text-center md:text-right">
                 <p className="text-xs text-neutral-500">
                   © 2026 Kaagidham Creatives Private Limited
                 </p>
