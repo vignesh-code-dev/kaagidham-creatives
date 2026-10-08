@@ -91,17 +91,18 @@ export default function Navbar() {
           {menuOpen ? "×" : "☰"}{" "}
         </button>{" "}
       </div>{" "}
-      {/* ================= MOBILE MENU ================= */}{" "}
+      {/* ================= MOBILE MENU ================= */}
       <div
-        className={` md:hidden overflow-hidden transition-all duration-300 ease-out ${menuOpen ? "max-h-[500px] opacity-100 border-t border-neutral-200" : "max-h-0 opacity-0"} `}
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          menuOpen
+            ? "max-h-[500px] opacity-100 border-t border-neutral-200"
+            : "max-h-0 opacity-0"
+        }`}
       >
-        {" "}
         <div className="bg-white px-5 sm:px-8 py-6">
-          {" "}
-          {/* Mobile Links */}{" "}
+          {/* Mobile Links */}
           <div className="space-y-1">
-            {" "}
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
@@ -110,37 +111,29 @@ export default function Navbar() {
                 offset={-75}
                 spy
                 onClick={closeMenu}
-                activeClass="!text-[#C9A227] !bg-[#C9A227]/5"
-                className=" flex items-center justify-between w-full px-4 py-3.5 rounded-xl text-base font-medium text-neutral-700 cursor-pointer hover:text-[#C9A227] hover:bg-[#C9A227]/5 transition-all duration-300 "
+                activeClass="!text-[#C9A227] !bg-neutral-100"
+                className="
+            flex items-center w-full
+            px-4 py-3.5
+            rounded-xl
+            text-base font-medium
+            text-neutral-700
+            cursor-pointer
+            hover:text-[#C9A227]
+            hover:bg-neutral-100
+            transition-all duration-300
+          "
               >
-                {" "}
-                <span>{item.name}</span>{" "}
-                <span className="text-neutral-300 text-sm">
-                  {" "}
-                  0{index + 1}{" "}
-                </span>{" "}
+                <span>{item.name}</span>
               </Link>
-            ))}{" "}
-          </div>{" "}
-          {/* Mobile Divider */} <div className="my-5 h-px bg-neutral-200" />{" "}
-          {/* Mobile CTA */}{" "}
-          <Link
-            to="contact"
-            smooth
-            duration={600}
-            offset={-75}
-            onClick={closeMenu}
-            className=" flex items-center justify-center gap-2 w-full bg-[#111111] text-white px-6 py-3.5 rounded-xl font-semibold text-sm cursor-pointer hover:bg-[#C9A227] hover:text-black transition-all duration-300 "
-          >
-            {" "}
-            Start a Conversation <span>→</span>{" "}
-          </Link>{" "}
-          {/* Small Brand Text */}{" "}
+            ))}
+          </div>
+
+          {/* Small Brand Text */}
           <p className="text-center text-[10px] tracking-[0.2em] uppercase text-neutral-400 mt-5">
-            {" "}
-            Strategy • Design • Motion{" "}
-          </p>{" "}
-        </div>{" "}
+            Strategy • Design • Motion
+          </p>
+        </div>
       </div>{" "}
     </nav>
   );
