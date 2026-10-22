@@ -1,15 +1,15 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Idiqlat:wght@200;300;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 .tittle {
-    font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker", cursive;
 }
 
-.kaagitham{
-    font-family: "poppins",sans-serif;
-    font-size: medium;
+.kaagitham {
+  font-family: "poppins", sans-serif;
+  font-size: medium;
 }
 
 @theme {
@@ -26,10 +26,10 @@
   --color-border: #1a1a1a; /* Border Color */
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
-
 
 /* Main toast card */
 .kc-toast {
@@ -40,7 +40,7 @@ html, body {
   color: white;
   padding: 12px 16px;
   font-family: "Fira Code", monospace;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* Text style */
@@ -71,7 +71,8 @@ html, body {
 
 /* index.css */
 @keyframes zoom {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -90,6 +91,11 @@ html, body {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
+}
+.font-caveat {
+  font-family: "Caveat", cursive !important;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .snake-border::before {
@@ -112,11 +118,11 @@ html, body {
   animation: snakeAngle 4s linear infinite;
 
   /* border மட்டும் */
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
 }
 
 @keyframes snakeAngle {
