@@ -1,208 +1,214 @@
 import { motion } from "framer-motion";
-import {
-  CheckCircle2,
-  Palette,
-  Layers3,
-  Sparkles,
-  Target,
-  ArrowRight,
-} from "lucide-react";
-import { Link } from "react-scroll";
-
-const services = [
-  {
-    number: "01",
-    title: "Brand Identity Systems",
-    icon: Palette,
-    description:
-      "We create distinctive brand identity systems that help businesses establish a strong, recognizable, and consistent visual presence.",
-    details: [
-      "Logo design & identity direction",
-      "Typography & colour systems",
-      "Brand guidelines",
-      "Visual language development",
-    ],
-  },
-  {
-    number: "02",
-    title: "Visual Communication Design",
-    icon: Layers3,
-    description:
-      "We transform information and ideas into clear, engaging visual communication designed for digital and physical environments.",
-    details: [
-      "Posters & marketing creatives",
-      "Campaign visuals",
-      "Presentation systems",
-      "Print & digital communication",
-    ],
-  },
-  {
-    number: "03",
-    title: "Motion & Visual Storytelling",
-    icon: Sparkles,
-    description:
-      "We bring ideas to life through purposeful motion, visual storytelling, and engaging creative experiences that hold attention.",
-    details: [
-      "Motion graphics",
-      "Social media animations",
-      "Visual storytelling",
-      "Concept-driven creative content",
-    ],
-  },
-  {
-    number: "04",
-    title: "Strategic Creative Direction",
-    icon: Target,
-    description:
-      "We help businesses define how they should look, sound, and communicate before creative execution begins.",
-    details: [
-      "Brand positioning",
-      "Creative direction",
-      "Message architecture",
-      "Audience alignment",
-    ],
-  },
-];
 
 export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-28"
+      className="py-[88px] relative bg-[#FBF8F1] font-['Montserrat',sans-serif] text-[#0B0B0B]"
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div className="max-w-[1120px] mx-auto px-[22px]">
         {/* SECTION HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="mb-12 max-w-3xl sm:mb-16"
+          className="grid gap-[18px] mb-[46px]"
         >
-          <div className="mb-4 inline-flex items-center gap-3">
-            <span className="h-px w-8 bg-[#C9A227] sm:w-10" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8B741A] sm:text-sm">
-              What We Do
-            </span>
+          <div className="flex items-center gap-[10px] text-[12px] font-semibold tracking-[.2em] uppercase mb-0">
+            <span className="w-[26px] h-[4px] rounded-[4px] bg-[#FFC20E]" />
+            What we do
           </div>
 
-          <h2 className="font-serif text-3xl font-bold leading-tight tracking-tight text-[#171510] sm:text-5xl lg:text-6xl">
-            Our <span className="text-[#C9A227]">Services</span>
+          <h2 className="font-extrabold text-[clamp(30px,5vw,50px)] leading-[1.08] tracking-[-.02em] m-0">
+            Four services.{" "}
+            <span className="bg-[linear-gradient(transparent_58%,#FFC20E_58%_92%,transparent_92%)] px-[0.08em] text-inherit">
+              One clear direction.
+            </span>
           </h2>
 
-          <p className="mt-5 text-sm leading-relaxed text-neutral-600 sm:text-base sm:leading-7">
-            We offer creative services designed to help businesses build
-            stronger identities, communicate more clearly, and create meaningful
-            connections with their audience.
-          </p>
-
-          <p className="mt-2 text-sm leading-relaxed text-neutral-600 sm:text-base sm:leading-7">
+          <p className="text-[#55514a] text-[clamp(16px,2vw,19px)] max-w-[620px] m-0 leading-[1.65]">
             From the first strategic thought to the final creative asset, our
             work combines business understanding with thoughtful design.
           </p>
         </motion.div>
 
-        {/* SERVICE CARDS GRID */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.article
-                key={service.number}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200/90 bg-white p-6 sm:p-8 lg:p-9 transition-all duration-300 hover:-translate-y-1 hover:border-[#C9A227] hover:shadow-[0_15px_40px_rgba(201,162,39,0.08)]"
-              >
-                {/* Background Subtle Gradient Accent */}
-                <div className="pointer-events-none absolute -right-6 -top-6 h-28 w-28 rounded-full bg-[#FFD21A]/10 blur-xl transition-all duration-300 group-hover:bg-[#FFD21A]/20" />
-
-                <div className="relative z-10">
-                  {/* Card Header: Number & Icon */}
-                  <div className="flex items-center justify-between">
-                    <span className="font-serif text-3xl font-bold tracking-tight text-neutral-300 transition-colors duration-300 group-hover:text-[#C9A227]/70 sm:text-4xl">
-                      {service.number}
-                    </span>
-
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FAFAFA] border border-neutral-200 transition-all duration-300 group-hover:border-[#C9A227] group-hover:bg-[#C9A227] group-hover:text-black">
-                      <Icon
-                        size={20}
-                        strokeWidth={1.8}
-                        className="text-[#171510] group-hover:text-black transition-colors"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Service Title */}
-                  <h3 className="mt-6 text-xl font-bold leading-snug tracking-tight text-[#171510] transition-colors group-hover:text-[#8B741A] sm:text-2xl">
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 sm:text-base">
-                    {service.description}
-                  </p>
-
-                  {/* Bullet Checklist */}
-                  <div className="mt-6 space-y-2.5 border-t border-neutral-100 pt-5">
-                    {service.details.map((detail) => (
-                      <div key={detail} className="flex items-start gap-2.5">
-                        <CheckCircle2
-                          size={16}
-                          className="mt-1 shrink-0 text-[#C9A227]"
-                        />
-                        <span className="text-xs sm:text-sm leading-relaxed text-neutral-700">
-                          {detail}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Expansion Accent Bar */}
-                <div className="mt-7 h-0.5 w-8 rounded-full bg-neutral-200 transition-all duration-300 group-hover:w-full group-hover:bg-[#C9A227]" />
-              </motion.article>
-            );
-          })}
-        </div>
-
-        {/* BOTTOM CTA BANNER */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mt-12 flex flex-col items-start justify-between gap-6 rounded-2xl sm:rounded-3xl border border-neutral-200/80 bg-[#FAFAFA] p-6 sm:mt-16 sm:flex-row sm:items-center sm:p-8 lg:p-10"
-        >
-          <div className="max-w-xl">
-            <h3 className="text-xl font-bold tracking-tight text-[#171510] sm:text-2xl">
-              Have a creative project in mind?
-            </h3>
-            <p className="mt-1.5 text-xs sm:text-sm text-neutral-600 leading-relaxed">
-              Let's turn your ideas into meaningful, purpose-driven creative
-              work.
-            </p>
-          </div>
-
-          <Link
-            to="contact"
-            smooth
-            duration={600}
-            offset={-70}
-            className="group inline-flex min-h-[48px] w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-full bg-[#111111] px-7 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#C9A227] hover:text-black hover:shadow-lg hover:shadow-[#C9A227]/20 active:scale-[0.98] sm:w-auto"
+        {/* SERVICES GRID (2x2) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
+          {/* Card 01 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, delay: 0 }}
+            className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
           >
-            <span>Start a Project</span>
-            <ArrowRight
-              size={16}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Link>
-        </motion.div>
+            <div>
+              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+                01
+              </div>
+              <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
+                Brand Identity Systems
+              </h3>
+              <p className="text-[#55514a] my-[12px] leading-[1.65]">
+                Distinctive identities that give businesses a strong,
+                recognisable and consistent visual presence.
+              </p>
+            </div>
+            <ul className="list-none m-0 p-[18px_0_0] border-t border-[#e7e0cf] grid gap-[10px] text-[15px]">
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Logo design &amp; identity direction
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Typography &amp; colour systems
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Brand guidelines
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Visual language development
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Card 02 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
+          >
+            <div>
+              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+                02
+              </div>
+              <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
+                Visual Communication Design
+              </h3>
+              <p className="text-[#55514a] my-[12px] leading-[1.65]">
+                Information and ideas turned into clear, engaging communication
+                for digital and physical spaces.
+              </p>
+            </div>
+            <ul className="list-none m-0 p-[18px_0_0] border-t border-[#e7e0cf] grid gap-[10px] text-[15px]">
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Posters &amp; marketing creatives
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Print &amp; digital communication
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Card 03 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
+          >
+            <div>
+              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+                03
+              </div>
+              <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
+                Motion &amp; Visual Storytelling
+              </h3>
+              <p className="text-[#55514a] my-[12px] leading-[1.65]">
+                Ideas brought to life through purposeful motion and stories that
+                hold attention.
+              </p>
+            </div>
+            <ul className="list-none m-0 p-[18px_0_0] border-t border-[#e7e0cf] grid gap-[10px] text-[15px]">
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Motion graphics
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Social media animations
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Visual storytelling
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Concept-driven creative content
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Card 04 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
+          >
+            <div>
+              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+                04
+              </div>
+              <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
+                Strategic Creative Direction
+              </h3>
+              <p className="text-[#55514a] my-[12px] leading-[1.65]">
+                We define how a business should look, sound and communicate
+                before execution begins.
+              </p>
+            </div>
+            <ul className="list-none m-0 p-[18px_0_0] border-t border-[#e7e0cf] grid gap-[10px] text-[15px]">
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Brand positioning
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Creative direction
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Message architecture
+              </li>
+            </ul>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

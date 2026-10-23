@@ -1,157 +1,141 @@
 import { Link } from "react-scroll";
-import { ArrowRight } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function Hero() {
-  const services = [
-    "Brand Identity",
-    "Visual Communication",
-    "Motion & Storytelling",
-    "Creative Direction",
-  ];
-
   return (
     <section
-      id="home"
-      className="relative w-full overflow-hidden bg-[#FAFAFA] text-[#171510] selection:bg-[#F5C60F]/30"
+      id="top"
+      className="pt-[96px] sm:pt-[110px] pb-20 lg:pb-[80px] relative overflow-hidden bg-[#FBF8F1] font-['Montserrat',sans-serif] text-[#0B0B0B]"
     >
-      {/* Background Soft Glow */}
-      <div className="pointer-events-none absolute -top-24 right-0 h-96 w-96 rounded-full bg-[#F5C60F]/10 blur-3xl" />
+      {/* Embedded Original CSS for Collage & Animations */}
+      <style>{`
+        .collage { position: relative; height: 380px; max-width: 440px; width: 100%; margin: 0 auto; }
+        .collage .disc { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #FFD84D, #FFC20E 55%, #F59E0B); right: -10px; top: -20px; }
+        .collage .dot { position: absolute; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #FFE27A, #FFC20E 60%, #F59E0B); }
+        .sheet { position: absolute; background: #fff; border: 2px solid #0B0B0B; border-radius: 16px; box-shadow: 6px 6px 0 #0B0B0B; }
+        .s1 { width: 270px; height: 200px; left: 0; top: 40px; transform: rotate(-7deg); padding: 18px 20px; color: #0B0B0B; }
+        .sw { display: flex; gap: 8px; }
+        .sw i { width: 30px; height: 30px; border-radius: 50%; border: 2px solid #0B0B0B; font-style: normal; display: inline-block; }
+        .lbl { font: 600 11px Montserrat, sans-serif; letter-spacing: .14em; text-transform: uppercase; margin-top: 12px; }
+        .ln { height: 8px; border-radius: 4px; background: #e7e0cf; margin-top: 8px; }
+        .s2 { width: 270px; height: 200px; right: 0; top: 10px; transform: rotate(6deg); padding: 18px 20px; color: #0B0B0B; }
+        .s3 { width: 310px; height: 210px; left: 45px; top: 140px; transform: rotate(-2deg); padding: 28px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 18px; font-weight: 800; font-size: 28px; line-height: 1.1; letter-spacing: -.02em; }
+        .s3 span { border-bottom: 3px dashed #0B0B0B; padding-bottom: 4px; }
+        .stamp { font-style: normal; background: #FFC20E; color: #0B0B0B; border: 2px solid #0B0B0B; border-radius: 10px; padding: 8px 14px; box-shadow: 3px 3px 0 #0B0B0B; transform: rotate(-3deg); animation: slam .6s .7s cubic-bezier(.2,1.4,.4,1) both; font-size: 15px; font-weight: 800; }
+        .stk { position: absolute; background: #0B0B0B; color: #fff; border-radius: 999px; padding: 7px 16px; font: 600 12px Montserrat, sans-serif; letter-spacing: .08em; text-transform: uppercase; animation: bob 3.6s ease-in-out infinite alternate; }
+        .k1 { left: -6px; top: 0; }
+        .k2 { right: -4px; bottom: 70px; animation-delay: -1.2s; }
+        .k3 { left: 14px; bottom: 6px; animation-delay: -2.4s; }
+        @keyframes slam { from { opacity: 0; transform: scale(1.9) rotate(-14deg); } to { opacity: 1; transform: scale(1) rotate(-3deg); } }
+        @keyframes bob { to { transform: translateY(-10px) rotate(-3deg); } }
+        @media (prefers-reduced-motion: reduce) { .stamp, .stk { animation: none; } }
+      `}</style>
 
-      {/* Main Hero Container - pt-28 added for mobile top spacing */}
-      <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-5 pb-16 pt-28 sm:px-8 sm:py-24 lg:grid-cols-12 lg:gap-8 lg:py-28">
-        {/* LEFT CONTENT */}
-        <div className="relative z-10 text-center lg:col-span-7 lg:text-left">
-          {/* Tagline */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#E2D8C6] bg-white/70 px-4 py-1.5 backdrop-blur-sm shadow-xs"
-          >
-            <span className="h-2 w-2 rounded-full bg-[#F5C60F]" />
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#62594B] sm:text-sm">
-              Creative Studio & Strategic Design Consultancy
-            </p>
-          </motion.div>
-
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 font-serif text-4xl font-normal leading-[1.08] tracking-tight text-[#171510] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem]"
-          >
-            Think clearly. <br className="hidden sm:inline" />
-            Create with <br className="hidden sm:inline" />
-            <span className="relative inline-block italic font-serif">
-              purpose.
-              <span className="absolute -bottom-1 left-0 -z-10 h-2 w-full -rotate-1 rounded-sm bg-[#F5C60F]/40" />
+      <div className="max-w-[1120px] mx-auto px-[22px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-[48px] items-center">
+          {/* LEFT COLUMN: TEXT CONTENT */}
+          <div>
+            {/* Pill Eyebrow */}
+            <span className="inline-block border-2 border-[#0B0B0B] rounded-full px-4 py-[7px] text-[11px] font-semibold tracking-[0.14em] uppercase mb-[26px]">
+              Creative Studio &amp; Strategic Design Consultancy
             </span>
-          </motion.h1>
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#655D50] sm:text-lg lg:mx-0"
-          >
-            We help businesses and organisations turn ideas into meaningful
-            creative work through brand identity, visual communication, motion,
-            and creative direction.
-          </motion.p>
+            <h1 className="font-extrabold text-[clamp(40px,8.6vw,84px)] leading-[1.08] tracking-[-.02em] m-0">
+              Think clearly. Create with{" "}
+              <span className="bg-[linear-gradient(transparent_58%,#FFC20E_58%_92%,transparent_92%)] px-[0.08em] text-inherit">
+                purpose.
+              </span>
+            </h1>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:justify-start"
-          >
-            <Link
-              to="contact"
-              smooth
-              duration={600}
-              offset={-70}
-              className="group inline-flex w-full min-h-[50px] cursor-pointer items-center justify-center rounded-full bg-[#F5C60F] px-8 py-3.5 text-sm sm:text-base font-semibold text-black transition-all duration-300 hover:bg-[#E5B800] hover:shadow-lg hover:shadow-[#F5C60F]/20 active:scale-[0.98] sm:w-auto"
-            >
-              Start a project
-              <ArrowRight
-                size={18}
-                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
-
-            <Link
-              to="services"
-              smooth
-              duration={600}
-              offset={-70}
-              className="inline-flex w-full min-h-[50px] cursor-pointer items-center justify-center rounded-full border border-neutral-300 bg-white/50 px-8 py-3.5 text-sm sm:text-base font-semibold text-[#171510] transition-all duration-300 hover:border-black hover:bg-black hover:text-white active:scale-[0.98] sm:w-auto"
-            >
-              Explore Paper Thinking
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* RIGHT SIDE — PAPER DESIGN */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative mx-auto flex h-[340px] w-full max-w-[380px] items-center justify-center sm:h-[420px] sm:max-w-[460px] lg:col-span-5 lg:h-[480px]"
-        >
-          {/* Back Paper 1 */}
-          <div className="absolute left-2 top-8 h-[65%] w-[75%] -rotate-6 rounded-lg border border-[#E1D6C0] bg-[#FFFEFA] p-5 shadow-[0_10px_30px_rgba(50,40,20,0.06)] sm:left-6 sm:top-10">
-            <div className="flex h-full flex-col justify-between py-2">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div key={i} className="h-px w-full bg-[#E6DCC9]" />
-              ))}
-            </div>
-          </div>
-
-          {/* Back Paper 2 */}
-          <div className="absolute right-2 top-4 h-[55%] w-[65%] rotate-6 rounded-lg border border-[#E1D6C0] bg-[#FFFEFA] p-4 shadow-[0_10px_25px_rgba(50,40,20,0.05)] sm:right-6 sm:top-6">
-            <div className="flex h-full flex-col justify-between py-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div key={i} className="h-px w-full bg-[#E6DCC9]" />
-              ))}
-            </div>
-          </div>
-
-          {/* Main Sticky Note */}
-          <div className="relative z-10 flex h-[62%] w-[78%] rotate-2 flex-col justify-center rounded-xl bg-[#FFD21A] p-6 shadow-[0_20px_40px_rgba(30,25,10,0.18)] sm:p-8">
-            <div className="absolute -top-3 left-1/2 h-6 w-20 -translate-x-1/2 -rotate-2 rounded-[2px] bg-white/40 backdrop-blur-xs" />
-
-            <p className="font-serif italic text-2xl font-semibold leading-snug text-black sm:text-3xl lg:text-4xl">
-              Ideas on paper. <br />
-              Impact in <br />
-              reality.
+            <p className="text-[#55514a] text-[clamp(16px,2vw,19px)] max-w-[620px] my-[26px] leading-[1.65]">
+              We help businesses and organisations turn ideas into meaningful
+              creative work through brand identity, visual communication,
+              motion, and creative direction.
             </p>
+
+            <div className="flex flex-wrap gap-4">
+              {/* Primary CTA Button */}
+              <Link
+                to="contact"
+                smooth
+                duration={600}
+                offset={-84}
+                className="inline-flex items-center gap-2 rounded-full px-[26px] py-[14px] font-semibold text-[15px] bg-[#FFC20E] text-[#0B0B0B] border-2 border-[#0B0B0B] shadow-[4px_4px_0_#0B0B0B] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0_#0B0B0B] transition-all cursor-pointer"
+              >
+                Start a project →
+              </Link>
+
+              {/* Secondary CTA Button */}
+              <Link
+                to="approach"
+                smooth
+                duration={600}
+                offset={-84}
+                className="inline-flex items-center gap-2 rounded-full px-[26px] py-[14px] font-semibold text-[15px] bg-transparent text-[#0B0B0B] border-2 border-[#0B0B0B] hover:bg-[#0B0B0B] hover:text-[#FBF8F1] transition-all cursor-pointer"
+              >
+                Explore Paper Thinking
+              </Link>
+            </div>
           </div>
 
-          {/* Hand-drawn Accent Bar */}
-          <div className="absolute -bottom-2 right-4 z-20 h-2.5 w-36 -rotate-12 rounded-full bg-black shadow-xs sm:w-44" />
+          {/* RIGHT COLUMN: COLLAGE ARTWORK WITH EXACT ANIMATIONS */}
+          <div className="collage" aria-hidden="true">
+            <div className="disc"></div>
+            <div
+              className="dot"
+              style={{
+                width: "34px",
+                height: "34px",
+                left: "20px",
+                top: "10px",
+              }}
+            ></div>
+            <div
+              className="dot"
+              style={{
+                width: "26px",
+                height: "26px",
+                right: "30px",
+                bottom: "20px",
+              }}
+            ></div>
 
-          {/* Decorative Dot */}
-          <div className="absolute bottom-4 left-6 h-3 w-3 rounded-full bg-[#FFD21A]" />
-        </motion.div>
-      </div>
-
-      {/* BOTTOM SERVICES STRIP (2x2 Grid on Mobile, Row on Desktop) */}
-      <div className="border-t border-[#E2D8C6] bg-white/60 backdrop-blur-xs">
-        <div className="mx-auto max-w-7xl px-5 py-6 sm:px-8">
-          <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-8 sm:gap-y-4 lg:justify-between">
-            {services.map((service) => (
-              <div
-                key={service}
-                className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#3A342B] sm:text-sm"
-              >
-                <span className="h-2 w-2 shrink-0 rounded-full bg-[#F5C60F]" />
-                <span className="truncate">{service}</span>
+            {/* Sheet 1 */}
+            <div className="sheet s1">
+              <div className="sw">
+                <i style={{ background: "#FFC20E" }}></i>
+                <i style={{ background: "#F59E0B" }}></i>
+                <i style={{ background: "#0B0B0B" }}></i>
+                <i style={{ background: "#fff" }}></i>
               </div>
-            ))}
+              <div>
+                <div className="lbl">Brand identity</div>
+                <div className="ln" style={{ width: "80%" }}></div>
+                <div className="ln" style={{ width: "55%" }}></div>
+              </div>
+            </div>
+
+            {/* Sheet 2 */}
+            <div className="sheet s2">
+              <div>
+                <b style={{ fontSize: "36px", lineHeight: 1 }}>Aa</b>
+                <div className="ln" style={{ width: "80%" }}></div>
+                <div className="ln" style={{ width: "55%" }}></div>
+              </div>
+              <div className="lbl" style={{ marginTop: "14px" }}>
+                Visual communication
+              </div>
+            </div>
+
+            {/* Sheet 3 */}
+            <div className="sheet s3">
+              <span>Ideas on paper.</span>
+              <em className="stamp">Impact in reality.</em>
+            </div>
+
+            {/* Floating Stickers */}
+            <span className="stk k1">Brand</span>
+            <span className="stk k2">Motion</span>
+            <span className="stk k3">Strategy</span>
           </div>
         </div>
       </div>
