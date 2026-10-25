@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { MapPin, Mail, Phone } from "lucide-react";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -118,10 +119,10 @@ export default function Contact() {
 
           {/* RIGHT COLUMN: CONTACT INFO */}
           <div className="grid gap-[22px] content-start pt-2 lg:pt-8">
-            <div className="flex gap-[16px]">
-              <i className="flex-none w-[44px] h-[44px] rounded-full bg-[#FFC20E] text-[#0B0B0B] grid place-items-center not-italic border-2 border-[#0B0B0B] font-bold">
-                📍
-              </i>
+            <div className="flex gap-[16px] items-start">
+              <div className="flex-none w-[44px] h-[44px] rounded-full bg-[#FFC20E] text-[#0B0B0B] grid place-items-center border-2 border-[#0B0B0B]">
+                <MapPin className="w-[24px] h-[24px] stroke-[2.2]" />
+              </div>
               <p className="m-0 leading-relaxed text-[#0B0B0B]">
                 <small className="block text-[12px] tracking-[.14em] uppercase text-[#55514a] font-semibold">
                   Studio
@@ -134,10 +135,10 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="flex gap-[16px]">
-              <i className="flex-none w-[44px] h-[44px] rounded-full bg-[#FFC20E] text-[#0B0B0B] grid place-items-center not-italic border-2 border-[#0B0B0B] font-bold">
-                ✉
-              </i>
+            <div className="flex gap-[16px] items-start">
+              <div className="flex-none w-[44px] h-[44px] rounded-full bg-[#FFC20E] text-[#0B0B0B] grid place-items-center border-2 border-[#0B0B0B]">
+                <Mail className="w-[24px] h-[24px] stroke-[2.2]" />
+              </div>
               <p className="m-0 leading-relaxed text-[#0B0B0B]">
                 <small className="block text-[12px] tracking-[.14em] uppercase text-[#55514a] font-semibold">
                   Email
@@ -151,10 +152,10 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="flex gap-[16px]">
-              <i className="flex-none w-[44px] h-[44px] rounded-full bg-[#FFC20E] text-[#0B0B0B] grid place-items-center not-italic border-2 border-[#0B0B0B] font-bold">
-                ☎
-              </i>
+            <div className="flex gap-[16px] items-start">
+              <div className="flex-none w-[44px] h-[44px] rounded-full bg-[#FFC20E] text-[#0B0B0B] grid place-items-center border-2 border-[#0B0B0B]">
+                <Phone className="w-[24px] h-[24px] stroke-[2.2]" />
+              </div>
               <p className="m-0 leading-relaxed text-[#0B0B0B]">
                 <small className="block text-[12px] tracking-[.14em] uppercase text-[#55514a] font-semibold">
                   Call or WhatsApp

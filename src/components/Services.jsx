@@ -44,7 +44,7 @@ export default function Services() {
             className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
           >
             <div>
-              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+              <div className="font-extrabold text-[36px] leading-[1] text-[#FFC20E] mb-[22px]">
                 01
               </div>
               <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
@@ -92,7 +92,7 @@ export default function Services() {
             className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
           >
             <div>
-              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+              <div className="font-extrabold text-[36px] leading-[1] text-[#FFC20E] mb-[22px]">
                 02
               </div>
               <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
@@ -116,6 +116,18 @@ export default function Services() {
                 </span>
                 Print &amp; digital communication
               </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Editorial &amp; Publication Design
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Infographics &amp; Presentation Design
+              </li>
             </ul>
           </motion.div>
 
@@ -128,7 +140,7 @@ export default function Services() {
             className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
           >
             <div>
-              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+              <div className="font-extrabold text-[36px] leading-[1] text-[#FFC20E] mb-[22px]">
                 03
               </div>
               <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
@@ -176,7 +188,7 @@ export default function Services() {
             className="bg-white border-2 border-[#0B0B0B] rounded-[20px] p-[30px] relative flex flex-col justify-between"
           >
             <div>
-              <div className="font-extrabold text-[44px] leading-[1] text-[#FFC20E] [-webkit-text-stroke:2px_#0B0B0B] mb-[22px]">
+              <div className="font-extrabold text-[36px] leading-[1] text-[#FFC20E] mb-[22px]">
                 04
               </div>
               <h3 className="font-extrabold text-[20px] tracking-[-.01em] m-0">
@@ -205,6 +217,12 @@ export default function Services() {
                   ✓
                 </span>
                 Message architecture
+              </li>
+              <li className="flex gap-[12px] items-start">
+                <span className="flex-none w-[22px] h-[22px] rounded-full bg-[#FFC20E] text-[#0B0B0B] font-extrabold text-[12px] grid place-items-center mt-[2px]">
+                  ✓
+                </span>
+                Campaign strategy & Planning
               </li>
             </ul>
           </motion.div>
