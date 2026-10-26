@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Approach() {
   return (
@@ -166,48 +167,56 @@ export default function Approach() {
       </section>
 
       {/* 3. SELECTED WORK SECTION */}
-      <section id="work" className="pb-[88px] bg-[#FBF8F1] text-[#0B0B0B]">
+      <section id="work" className="py-[88px] bg-[#FBF8F1] text-[#0B0B0B]">
         <div className="max-w-[1120px] mx-auto px-[22px]">
-          <div className="grid gap-[18px] mb-[46px]">
-            <div className="flex items-center gap-[10px] text-[12px] font-semibold tracking-[.2em] uppercase mb-0">
-              <span className="w-[26px] h-[4px] rounded-[4px] bg-[#FFC20E]" />
-              Selected work
-            </div>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-[46px] gap-6">
+            <div className="grid gap-[18px]">
+              <div className="flex items-center gap-[10px] text-[12px] font-semibold tracking-[.2em] uppercase mb-0">
+                <span className="w-[26px] h-[4px] rounded-[4px] bg-[#FFC20E]" />
+                Selected work
+              </div>
 
-            <h2 className="font-extrabold text-[clamp(30px,5vw,50px)] leading-[1.08] tracking-[-.02em] m-0">
-              Ideas,{" "}
-              <span className="bg-[linear-gradient(transparent_58%,#FFC20E_58%_92%,transparent_92%)] px-[0.08em] text-inherit">
-                in reality.
+              <h2 className="font-extrabold text-[clamp(30px,5vw,50px)] leading-[1.08] tracking-[-.02em] m-0">
+                Ideas,{" "}
+                <span className="bg-[linear-gradient(transparent_58%,#FFC20E_58%_92%,transparent_92%)] px-[0.08em] text-inherit">
+                  in reality.
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          {/* Pizza Story Card - Navigates to New Route using RouterLink */}
+          <RouterLink
+            to="/case-study/pizza-story"
+            className="group relative aspect-[16/9] border-2 border-[#0B0B0B] rounded-[24px] overflow-hidden bg-[#0B0B0B] text-white p-[28px] flex flex-col justify-between cursor-pointer transition-transform duration-300 hover:-translate-y-1 shadow-[4px_4px_0_#0B0B0B] block"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-90 group-hover:scale-105 transition-transform duration-500 z-0"
+              style={{
+                backgroundImage: `url('/images/Pizza Story Brand Identity Showcase.png')`,
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/50 to-transparent z-0" />
+
+            <div className="relative z-10 flex justify-between items-center text-xs font-bold uppercase tracking-wider">
+              <span className="bg-[#FFC20E] text-[#0B0B0B] px-3 py-1 rounded-full border border-[#0B0B0B]">
+                Brand Identity & OOH
               </span>
-            </h2>
-          </div>
+              <span className="w-9 h-9 rounded-full bg-white text-[#0B0B0B] grid place-items-center font-bold transition-transform group-hover:rotate-45">
+                ↗
+              </span>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[18px]">
-            <div className="aspect-[4/5] border-2 border-[#0B0B0B] rounded-[20px] p-[20px] flex flex-col justify-end font-extrabold text-[19px] leading-[1.2] bg-[#FFC20E] text-[#0B0B0B]">
-              Brand identity
-              <small className="block font-medium text-[12px] mt-[8px] opacity-[.7]">
-                Add case study
-              </small>
+            <div className="relative z-10">
+              <h3 className="font-extrabold text-[28px] leading-[1.1] mb-2 text-white">
+                Pizza Story
+              </h3>
+              <p className="font-medium text-[15px] text-[#cfcabc]">
+                Comprehensive Visual Identity, Packaging & Chennai Street
+                Campaign
+              </p>
             </div>
-            <div className="aspect-[4/5] border-2 border-[#0B0B0B] rounded-[20px] p-[20px] flex flex-col justify-end font-extrabold text-[19px] leading-[1.2] bg-[#0B0B0B] text-white">
-              Campaigns &amp; posters
-              <small className="block font-medium text-[12px] mt-[8px] opacity-[.7]">
-                Add case study
-              </small>
-            </div>
-            <div className="aspect-[4/5] border-2 border-[#0B0B0B] rounded-[20px] p-[20px] flex flex-col justify-end font-extrabold text-[19px] leading-[1.2] bg-white text-[#0B0B0B]">
-              Motion &amp; social
-              <small className="block font-medium text-[12px] mt-[8px] opacity-[.7]">
-                Add case study
-              </small>
-            </div>
-            <div className="aspect-[4/5] border-2 border-[#0B0B0B] rounded-[20px] p-[20px] flex flex-col justify-end font-extrabold text-[19px] leading-[1.2] bg-[#F59E0B] text-[#0B0B0B]">
-              Print &amp; publications
-              <small className="block font-medium text-[12px] mt-[8px] opacity-[.7]">
-                Add case study
-              </small>
-            </div>
-          </div>
+          </RouterLink>
         </div>
       </section>
 
@@ -221,23 +230,24 @@ export default function Approach() {
             </div>
             <h2 className="font-extrabold text-[clamp(30px,5vw,50px)] leading-[1.08] tracking-[-.02em] m-0">
               Clarity Session
-              <span className="block text-[.6em] mt-[10px]">₹7,500</span>
+              <span className="block text-[.6em] md:inline md:ml-3">
+                ₹7,500
+              </span>
             </h2>
-            <p className="max-w-[560px] mt-[12px] m-0 text-[#0B0B0B] text-[16px] leading-[1.65]">
+            <p className="text-[#0B0B0B] text-[16px] max-w-[500px] mt-2">
               A focused session to define your idea, audience and creative
               direction before any design begins.
             </p>
           </div>
 
-          <Link
+          <ScrollLink
             to="contact"
-            smooth
-            duration={600}
-            offset={-84}
-            className="inline-flex items-center gap-2 rounded-full px-[26px] py-[14px] font-semibold text-[15px] bg-[#0B0B0B] text-white border-2 border-[#0B0B0B] shadow-[4px_4px_0_#0B0B0B] hover:bg-transparent hover:text-[#0B0B0B] transition-all cursor-pointer whitespace-nowrap"
+            smooth={true}
+            duration={500}
+            className="bg-[#0B0B0B] text-white font-bold py-3.5 px-7 rounded-full border-2 border-[#0B0B0B] hover:bg-transparent hover:text-[#0B0B0B] transition-all cursor-pointer text-center"
           >
             Book a Clarity Session →
-          </Link>
+          </ScrollLink>
         </div>
       </div>
     </div>

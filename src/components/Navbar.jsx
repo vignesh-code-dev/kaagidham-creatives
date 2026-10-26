@@ -5,7 +5,7 @@ import logo from "../assets/kc-logo.png";
 const navItems = [
   { name: "Services", to: "services" },
   { name: "Approach", to: "approach" },
-  { name: "Work", to: "work" },
+  { name: "Our Work", to: "work" },
   { name: "Contact", to: "contact" },
 ];
 
